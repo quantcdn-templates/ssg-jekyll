@@ -1,0 +1,10 @@
+[{
+    "title": "Jekyll",
+    "url": "/deploy/step-one?template=ssg-jekyll",
+    "summary": "A blog-aware static site generator built with Ruby.",
+    "content": "Deploy Jekyll, the battle-tested static site generator that powers GitHub Pages. Features Liquid templates, Markdown support, and a rich plugin ecosystem.",
+    "categories": ["ruby"],
+    "tags": ["jekyll", "ruby", "blog", "static", "ssg"],
+    "template_type": "ssg",
+    "requires_db": false
+}]

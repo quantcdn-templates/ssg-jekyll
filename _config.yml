@@ -1,0 +1,36 @@
+title: My Jekyll Site
+description: >-
+  A blog-aware static site generator built with Ruby,
+  deployed to QuantCDN for blazing fast performance.
+baseurl: ""
+url: ""
+
+# Build settings
+theme: minima
+markdown: kramdown
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Permalink structure
+permalink: /:categories/:year/:month/:day/:title/
+
+# Allow future posts (useful for testing)
+future: true
+
+# Exclude from processing
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md

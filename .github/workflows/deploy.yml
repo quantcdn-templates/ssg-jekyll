@@ -1,0 +1,41 @@
+name: Deploy to QuantCDN
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      - name: Deploy to QuantCDN
+        uses: quantcdn/deploy-action@v5.0.0
+        with:
+          customer: ${{ secrets.QUANT_CUSTOMER }}
+          project: ${{ secrets.QUANT_PROJECT }}
+          token: ${{ secrets.QUANT_TOKEN }}
+          dir: _site
+
+      - name: Purge QuantCDN cache
+        uses: quantcdn/purge-action@v2
+        with:
+          customer: ${{ secrets.QUANT_CUSTOMER }}
+          project: ${{ secrets.QUANT_PROJECT }}
+          token: ${{ secrets.QUANT_TOKEN }}
+          url_pattern: "/*"
