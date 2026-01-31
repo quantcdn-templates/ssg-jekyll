@@ -1,6 +1,6 @@
 # Jekyll Template for QuantCDN
 
-[![Deploy to QuantCDN](https://www.quantcdn.io/img/quant-deploy-btn-sml.svg)](https://dashboard.quantcdn.io/projects/add/jamstack/ssg-jekyll)
+[![Deploy to QuantCDN](https://www.quantcdn.io/img/quant-deploy-btn-sml.svg)](https://dashboard.quantcdn.io/deploy/static/ssg-jekyll)
 
 A production-ready Jekyll template configured for deployment to QuantCDN.
 
